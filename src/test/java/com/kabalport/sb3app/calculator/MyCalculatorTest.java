@@ -2,11 +2,13 @@ package com.kabalport.sb3app.calculator;
 
 import com.kabalport.sb3app.calcaulator.MyCalculator;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class MyCalculatorTest {
 
     @Test
+    @DisplayName("MyCalculator 더하기 테스트")
     void addTest() {
         // AAA 패턴
 
@@ -19,6 +21,7 @@ class MyCalculatorTest {
     }
 
     @Test
+    @DisplayName("MyCalculator 빼기 테스트")
     void minusTest() {
         // GWT 패턴
 
@@ -33,7 +36,8 @@ class MyCalculatorTest {
     }
 
     @Test
-    void multiply() {
+    @DisplayName("MyCalculator 곱하기 테스트")
+    void multiplyTest() {
         // given
         MyCalculator myCalculator = new MyCalculator(2.0);
         // when
@@ -43,7 +47,8 @@ class MyCalculatorTest {
     }
 
     @Test
-    void divide() {
+    @DisplayName("MyCalculator 나누기 테스트")
+    void divideTest() {
         // given
         MyCalculator myCalculator = new MyCalculator(10.0);
         // when
@@ -53,6 +58,7 @@ class MyCalculatorTest {
     }
 
     @Test
+    @DisplayName("MyCalculator 사칙연산 테스트")
     void complicatedCalculateTest(){
         // given
         MyCalculator myCalculator = new MyCalculator();
@@ -69,6 +75,7 @@ class MyCalculatorTest {
     }
 
     @Test
+    @DisplayName("MyCalculator 0으로 나눴을 때에는 ZeroDivisionException을 발생시켜야 합니다.")
     void divideZeroTest(){
         // given
         MyCalculator myCalculator = new MyCalculator(10.0);
