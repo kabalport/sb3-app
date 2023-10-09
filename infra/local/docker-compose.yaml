@@ -7,7 +7,7 @@ services:
     image: mysql:8
     environment:
       MYSQL_DATABASE: score
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - 3306:3306
     volumes:
@@ -18,7 +18,7 @@ services:
     environment:
       - FLYWAY_DB_URL=jdbc:mysql://local-db/score
       - FLYWAY_DB_USER=root
-      - FLYWAY_DB_PASSWORD=password
+      - FLYWAY_DB_PASSWORD=1234
     command: migrate
     volumes:
       - ../../db/flyway.conf:/flyway/conf/flyway.conf

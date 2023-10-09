@@ -1,4 +1,4 @@
-package com.kabalport.sb3app.controller.request;
+package com.kabalport.sb3app.student.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
