@@ -1,4 +1,4 @@
-package com.kabalport.sb3app;
+package com.kabalport.sb3app.testData;
 
 import com.kabalport.sb3app.testData.TestData;
 import org.junit.jupiter.api.Assertions;
