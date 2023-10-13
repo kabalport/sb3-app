@@ -1,4 +1,4 @@
-package com.kabalport.sb3app.model;
+package com.kabalport.sb3app.student.model;
 
 import com.kabalport.sb3app.student.model.StudentScore;
 

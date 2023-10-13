@@ -1,19 +1,15 @@
-package com.kabalport.sb3app.service;
+package com.kabalport.sb3app.student.service;
 
-import com.kabalport.sb3app.calcaulator.MyCalculator;
-import com.kabalport.sb3app.model.StudentFailFixture;
-import com.kabalport.sb3app.model.StudentPassFixture;
-import com.kabalport.sb3app.model.StudentScoreFixture;
-import com.kabalport.sb3app.model.StudentScoreTestDataBuilder;
+import com.kabalport.sb3app.student.model.StudentFailFixture;
+import com.kabalport.sb3app.student.model.StudentPassFixture;
+import com.kabalport.sb3app.student.model.StudentScoreFixture;
+import com.kabalport.sb3app.student.model.StudentScoreTestDataBuilder;
 import com.kabalport.sb3app.student.dto.response.ExamFailStudentResponse;
 import com.kabalport.sb3app.student.dto.response.ExamPassStudentResponse;
-import com.kabalport.sb3app.student.model.StudentFail;
-import com.kabalport.sb3app.student.model.StudentPass;
-import com.kabalport.sb3app.student.model.StudentScore;
+import com.kabalport.sb3app.student.model.*;
 import com.kabalport.sb3app.student.repository.StudentFailRepository;
 import com.kabalport.sb3app.student.repository.StudentPassRepository;
 import com.kabalport.sb3app.student.repository.StudentScoreRepository;
-import com.kabalport.sb3app.student.service.StudentScoreService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
