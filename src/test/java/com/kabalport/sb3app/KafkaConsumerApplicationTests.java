@@ -1,7 +1,7 @@
 package com.kabalport.sb3app;
 
-import com.kabalport.sb3app.student.service.KafkaConsumerService;
-import com.kabalport.sb3app.student.service.KafkaProducerService;
+import com.kabalport.sb3app.score.service.KafkaConsumerService;
+import com.kabalport.sb3app.score.service.KafkaProducerService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

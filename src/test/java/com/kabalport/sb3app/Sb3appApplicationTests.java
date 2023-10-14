@@ -1,7 +1,7 @@
 package com.kabalport.sb3app;
 
-import com.kabalport.sb3app.student.model.StudentScoreFixture;
-import com.kabalport.sb3app.student.repository.StudentScoreRepository;
+import com.kabalport.sb3app.score.model.StudentScoreFixture;
+import com.kabalport.sb3app.score.repository.StudentScoreRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.junit.jupiter.api.Assertions;

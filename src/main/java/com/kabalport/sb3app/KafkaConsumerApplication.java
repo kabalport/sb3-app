@@ -1,6 +1,6 @@
 package com.kabalport.sb3app;
 
-import com.kabalport.sb3app.student.service.KafkaConsumerService;
+import com.kabalport.sb3app.score.service.KafkaConsumerService;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
