@@ -19,7 +19,7 @@ public class StudentPass {
     private Long id;
     @Column(name = "exam")
     private String exam;
-    @Column(name = "studnet_name")
+    @Column(name = "student_name")
     private String studentName;
     @Column(name = "avg_score")
     private Double avgScore;

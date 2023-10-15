@@ -2,6 +2,8 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.4'
 	id 'io.spring.dependency-management' version '1.1.3'
+	id 'jacoco'
+	id 'org.sonarqube' version '4.0.0.2929'
 }
 
 group = 'com.kabalport'
@@ -49,6 +51,71 @@ dependencies {
 
 }
 
+jacoco {
+	toolVersion = "0.8.8"
+}
+
+
 tasks.named('test') {
 	useJUnitPlatform()
+
+	jacoco {}
+	finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+	reports {
+		xml.required = true
+		html.required = true
+		csv.required = false
+
+		xml.destination(file("build/jacoco/jacoco.xml"))
+		html.destination(file("build/jacoco/jacoco.html"))
+	}
+
+	finalizedBy(tasks.jacocoTestCoverageVerification)
+}
+
+tasks.jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			enabled = true
+			element = "CLASS"
+
+			limit {
+				counter = "LINE"
+				value = "COVEREDRATIO"
+				minimum = BigDecimal.valueOf(0.5)
+			}
+
+			limit {
+				counter = "LINE"
+				value = "TOTALCOUNT"
+				maximum = BigDecimal.valueOf(300)
+			}
+
+			excludes = List.of(
+					"*.test.*",
+					"*.score.*",
+					"*.calcaulator.*",
+					"*.testData.*",
+					"*.product.*",
+					"com.kabalport.sb3app.Sb3appApplication",
+					"com.kabalport.sb3app.KafkaConsumerApplication",
+			)
+		}
+	}
+}
+
+sonar {
+	properties {
+		property("sonar.host.url", "http://localhost:9000")
+		property("sonar.login", "sqp_a3af9f6d43c080e38a09cc51cd7e359a629ba386")
+		property("sonar.sources", "src/main/java")
+		property("sonar.tests", "src/test/java")
+		property("sonar.coverage.jacoco.xmlReportPaths", "build/jacoco/jacoco.xml")
+		property("sonar.sourceEncoding", "UTF-8")
+		property("sonar.projectKey", "sb3app")
+		property("sonar.projectName", "sb3app")
+	}
 }
