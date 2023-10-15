@@ -1,19 +1,14 @@
 package com.kabalport.sb3app.score.model;
 
 import jakarta.persistence.*;
-
-
-
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-
-
-
 import lombok.NoArgsConstructor;
 
-@Getter @Builder @AllArgsConstructor
+@Getter
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "student_fail")
 @Entity

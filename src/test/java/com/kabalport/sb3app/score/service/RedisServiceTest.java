@@ -10,8 +10,11 @@ public class RedisServiceTest extends IntegrationTest {
   @Autowired private RedisService redisService;
 
   @Test
+
+
   @DisplayName("Redis Get / Set 테스트")
   public void redisGetSetTest() {
+    //test
     // given
     String expectValue = "hello";
     String key = "hi";
