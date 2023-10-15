@@ -8,6 +8,6 @@ import lombok.Getter;
 @EqualsAndHashCode
 @AllArgsConstructor
 public class ExamPassStudentResponse {
-    private final String studentName;
-    private final Double avgScore;
+  private final String studentName;
+  private final Double avgScore;
 }

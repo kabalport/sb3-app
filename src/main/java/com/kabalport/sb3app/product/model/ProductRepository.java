@@ -2,6 +2,4 @@ package com.kabalport.sb3app.product.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProductRepository extends JpaRepository<Product, Integer> {
-
-}
+public interface ProductRepository extends JpaRepository<Product, Integer> {}
