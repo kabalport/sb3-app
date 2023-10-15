@@ -3,12 +3,8 @@ package com.kabalport.sb3app;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-//test
+
 @EnableJpaRepositories
-
-
-
-
 @SpringBootApplication
 public class Sb3appApplication {
 
