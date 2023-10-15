@@ -1,11 +1,13 @@
-package com.kabalport.sb3app.config;
+package com.kabalport.sb3app.score.config;
 
 import com.kabalport.sb3app.product.model.Product;
 import com.kabalport.sb3app.product.model.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+@Configuration
 public class InitConfig {
     @Profile({ "dev" }) // dev 동작
     @Bean

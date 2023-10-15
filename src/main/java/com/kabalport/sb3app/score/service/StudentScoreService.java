@@ -2,6 +2,7 @@ package com.kabalport.sb3app.score.service;
 
 
 import com.kabalport.sb3app.calcaulator.MyCalculator;
+import com.kabalport.sb3app.score.controller.ScoreController;
 import com.kabalport.sb3app.score.dto.response.ExamFailStudentResponse;
 import com.kabalport.sb3app.score.model.StudentFail;
 import com.kabalport.sb3app.score.model.StudentPass;

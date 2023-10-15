@@ -1,4 +1,4 @@
-package com.kabalport.sb3app.config;
+package com.kabalport.sb3app.score.config;
 
 
 import org.springframework.beans.factory.annotation.Value;
