@@ -23,6 +23,7 @@ public class ApplyService {
     this.couponCountRepository = couponCountRepository;
     this.appliedUserRepository = appliedUserRepository;
   }
+
   @Transactional
   public void apply(Long userId) {
     Long apply = appliedUserRepository.add(userId);
