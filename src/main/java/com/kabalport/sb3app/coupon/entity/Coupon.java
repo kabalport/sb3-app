@@ -6,8 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-
-
 public class Coupon {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
