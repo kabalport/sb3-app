@@ -4,6 +4,7 @@ import com.kabalport.sb3app.coupon.entity.Coupon;
 import com.kabalport.sb3app.coupon.repository.AppliedUserRepository;
 import com.kabalport.sb3app.coupon.repository.CouponCountRepository;
 import com.kabalport.sb3app.coupon.repository.CouponRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,7 +23,7 @@ public class ApplyService {
     this.couponCountRepository = couponCountRepository;
     this.appliedUserRepository = appliedUserRepository;
   }
-
+  @Transactional
   public void apply(Long userId) {
     Long apply = appliedUserRepository.add(userId);
 
