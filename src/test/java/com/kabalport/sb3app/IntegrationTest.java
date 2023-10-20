@@ -13,10 +13,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 import org.testcontainers.containers.DockerComposeContainer;
-import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.containers.localstack.LocalStackContainer;
 import org.testcontainers.containers.wait.strategy.Wait;
-import org.testcontainers.utility.DockerImageName;
 
 @Ignore
 @SpringBootTest
@@ -28,7 +26,7 @@ public class IntegrationTest {
 
   static LocalStackContainer aws;
 
-  static KafkaContainer kafka;
+  //  static KafkaContainer kafka;
 
   static {
     rdbms =
@@ -55,8 +53,9 @@ public class IntegrationTest {
             .withStartupTimeout(Duration.ofSeconds(600));
     aws.start();
 
-    kafka = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.5.0")).withKraft();
-    kafka.start();
+    //    kafka = new
+    // KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.5.0")).withKraft();
+    //    kafka.start();
   }
 
   static class IntegrationTestInitializer
@@ -85,7 +84,7 @@ public class IntegrationTest {
 
       }
 
-      properties.put("spring.kafka.bootstrap-servers", kafka.getBootstrapServers());
+      //      properties.put("spring.kafka.bootstrap-servers", kafka.getBootstrapServers());
 
       TestPropertyValues.of(properties).applyTo(applicationContext);
     }
