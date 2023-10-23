@@ -51,33 +51,33 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
-#      - name: Deploy to App Runner
-#        id: deploy-apprunner
-#        uses: awslabs/amazon-app-runner-deploy@main
-#        env:
-#          DB_URL: ${{ secrets.DB_URL }}
-#          DB_USERNAME: ${{ secrets.DB_USERNAME }}
-#          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-#          REDIS_HOST: ${{ secrets.REDIS_HOST }}
-#          REDIS_PORT: ${{ secrets.REDIS_PORT }}
-#          REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
-#        with:
-#          service: spring-app-runner
-#          image: ${{ steps.build-image.outputs.image }}
-#          access-role-arn: ${{ secrets.ROLE_ARN }}
-#          region: ${{ env.AWS_REGION }}
-#          cpu: 1
-#          memory: 2
-#          port: 8080
-#          wait-for-service-stability: false
-#          copy-env-vars: |
-#            DB_URL
-#            DB_USERNAME
-#            DB_PASSWORD
-#            REDIS_HOST
-#            REDIS_PORT
-#            REDIS_PASSWORD
+      - name: Deploy to App Runner
+        id: deploy-apprunner
+        uses: awslabs/amazon-app-runner-deploy@main
+        env:
+          DB_URL: ${{ secrets.DB_URL }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          REDIS_HOST: ${{ secrets.REDIS_HOST }}
+          REDIS_PORT: ${{ secrets.REDIS_PORT }}
+          REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+        with:
+          service: spring-app-runner
+          image: ${{ steps.build-image.outputs.image }}
+          access-role-arn: ${{ secrets.ROLE_ARN }}
+          region: ${{ env.AWS_REGION }}
+          cpu: 1
+          memory: 2
+          port: 8080
+          wait-for-service-stability: false
+          copy-env-vars: |
+            DB_URL
+            DB_USERNAME
+            DB_PASSWORD
+            REDIS_HOST
+            REDIS_PORT
+            REDIS_PASSWORD
 
-#      - name: App Runner output
-#        run: echo "App runner output ${{ steps.deploy-apprunner.outputs.service-id }}"
+      - name: App Runner output
+        run: echo "App runner output ${{ steps.deploy-apprunner.outputs.service-id }}"
           
