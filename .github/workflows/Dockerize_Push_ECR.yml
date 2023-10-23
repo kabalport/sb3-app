@@ -7,7 +7,7 @@ on:
 
 env:
   AWS_REGION: ap-northeast-1                                      # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REGISTRY: 052355723841.dkr.ecr.ap-northeast-1.amazonaws.com/spring-app-runner # set this to your Amazon ECR URI
+  ECR_REGISTRY: 052355723841.dkr.ecr.ap-northeast-1.amazonaws.com # set this to your Amazon ECR URI
   ECR_REPOSITORY: spring-app-runner                            # set this to your Amazon ECR repository name
   IMAGE_TAG: latest                                               # set this to your Amazon ECR repository tag name
 
@@ -15,12 +15,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.0.2
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
-          distribution: 'corretto'
-          java-version: '17'
+          java-version: 17
+          distribution: corretto
+          cache: 'gradle'
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
