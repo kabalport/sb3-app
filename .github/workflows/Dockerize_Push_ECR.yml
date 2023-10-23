@@ -7,8 +7,7 @@ on:
 
 env:
   AWS_REGION: ap-northeast-1                                      # set this to your preferred AWS region, e.g. us-west-1
-#  ECR_REGISTRY: 611029865738.dkr.ecr.ap-northeast-1.amazonaws.com # set this to your Amazon ECR URI
-  ECR_REGISTRY: 052355723841.dkr.ecr.ap-northeast-1.amazonaws.com/spring-app-runner
+  ECR_REGISTRY: 052355723841.dkr.ecr.ap-northeast-1.amazonaws.com/spring-app-runner # set this to your Amazon ECR URI
   ECR_REPOSITORY: spring-app-runner                            # set this to your Amazon ECR repository name
   IMAGE_TAG: latest                                               # set this to your Amazon ECR repository tag name
 
@@ -16,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
@@ -27,8 +26,8 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-#        run: ./gradlew clean bootJar
-        run: ./gradlew build -x test
+        run: ./gradlew clean bootJar
+#        run: ./gradlew build -x test
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
