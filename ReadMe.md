@@ -1,10 +1,13 @@
 # 아키텍처
 ![Example Image](architecture.png)
 
+# 로컬구축
+- 도커로 로컬환경 구축
 # 세팅
 - 먼저 project structure에서 correto 17 모듈 source,dependency
 - 설정에 gralde correto17 맞추기
 - git feature/pr-test로 맞추기
+
 
 ```shell
 cd script
